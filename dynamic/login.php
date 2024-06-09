@@ -63,7 +63,7 @@ try {
         if ($user_password === $storedPassword) {
             // 로그인 성공
             echo "로그인 성공!\n";
-            echo "사용자 이름: " . $userName;
+            echo "사용자 : " . $userName;
         } else {
             // 비밀번호 불일치
             echo "비밀번호가 일치하지 않습니다.";

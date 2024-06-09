@@ -1,5 +1,5 @@
 <?php
-// AWS SDK for PHP 로드
+// AWS SDK for PHP 
 require_once './vendor/autoload.php';
 
 use Aws\DynamoDb\DynamoDbClient;
