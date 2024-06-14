@@ -35,7 +35,7 @@ jobs:
     - name: Compress all files
       run: |
         cd dynamic  # PHP 파일이 있는 디렉토리로 이동
-        zip -r ../compressed/dynamic_files.zip ./*  # 압축 파일 생성 후 압축 파일을 compressed 폴더로 이동
+        zip -r ../compressed/dynamic_files.zip ./* -x ./*.php  # 상위 폴더의 *.php 파일 제외
 
     - name: Compress HTML files
       run: |
