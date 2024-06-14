@@ -18,17 +18,28 @@ jobs:
       with:
         node-version: '20'
 
+    - name: Install AWS CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y awscli
+
+    - name: Create compressed directory
+      run: mkdir -p compressed
+
     - name: Compress PHP files
       run: |
-        mkdir -p compressed
         cd dynamic  # PHP 파일이 있는 디렉토리로 이동
         zip -r ../compressed/dynamic_files.zip *.php  # 압축 파일 생성 후 압축 파일을 compressed 폴더로 이동
 
+    - name: Compress all files
+      run: |
+        cd dynamic  # PHP 파일이 있는 디렉토리로 이동
+        zip -r ../compressed/dynamic.zip *  # 압축 파일 생성 후 압축 파일을 compressed 폴더로 이동
+
     - name: Compress HTML files
       run: |
-        mkdir -p compressed
         cd static  # HTML 파일이 있는 디렉토리로 이동
-        zip -r ../compressed/static_files.zip *.html  # 압축 파일 생성 후 압축 파일을 compressed 폴더로 이동
+        zip -r ../compressed/static_files.zip *  # 압축 파일 생성 후 압축 파일을 compressed 폴더로 이동
 
     - name: Upload PHP files to S3
       env:
