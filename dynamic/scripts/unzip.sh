@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 변수 정의
-SOURCE="/dynamic.zip"
+SOURCE="/var/www/html/dynamic.zip"
 DESTINATION="/var/www/html"
 
 # 압축 해제

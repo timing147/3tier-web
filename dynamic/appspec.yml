@@ -1,11 +1,15 @@
 version: 0.0
 os: linux
 files:
-  - source: /dynamic.zip
+  - source: dynamic.zip
     destination: /var/www/html
 
 hooks:
   AfterInstall:
     - location: scripts/unzip.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server.sh
       timeout: 300
       runas: root
