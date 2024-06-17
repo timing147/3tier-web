@@ -62,15 +62,15 @@ try {
         $userName = $result['Item']['user_name']['S'];
         if ($user_password === $storedPassword) {
             // 로그인 성공
-            echo "사용자 정보 일치!!v1.3\n";
-            echo "사용자 : " . $userName;
+            echo "<p style='font-size: 48px;'>사용자 정보 일치!! v1.3</p>\n";
+            echo "<p style='font-size: 48px;'>사용자 이름: " . $userName . "</p>";
         } else {
             // 비밀번호 불일치
-            echo "비밀번호가 일치하지 않습니다.";
+            echo "<p style='font-size: 48px;'>비밀번호가 일치하지 않습니다.</p>";
         }
     } else {
         // 사용자 정보 없음
-        echo "사용자 정보가 존재하지 않습니다.";
+        echo "<p style='font-size: 48px;'>사용자 정보가 존재하지 않습니다.</p>";
     }
 } catch (AwsException $e) {
     // AWS SDK 오류 처리
