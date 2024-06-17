@@ -62,7 +62,7 @@ try {
         $userName = $result['Item']['user_name']['S'];
         if ($user_password === $storedPassword) {
             // 로그인 성공
-            echo "<p style='font-size: 48px;'>사용자 정보 일치!! v1.3</p>\n";
+            echo "<p style='font-size: 48px;'>사용자 정보 일치!! v1.4</p>\n";
             echo "<p style='font-size: 48px;'>사용자 이름: " . $userName . "</p>";
         } else {
             // 비밀번호 불일치
